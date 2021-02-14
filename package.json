@@ -1,0 +1,26 @@
+{
+    "name": "userscripts",
+    "version": "1.0.0",
+    "description": "A collection of my userscripts",
+    "main": "index.js",
+    "scripts": {
+        "prettier:format": "prettier --write \"{,**/}*.{js,json,md,yml}\"",
+        "lint": "npm run eslint",
+        "lint-fix": "npm run eslint -- --fix",
+        "eslint": "eslint ."
+    },
+    "keywords": [
+        "userscripts",
+        "ui",
+        "improvements"
+    ],
+    "author": "Ingo FP Angel <ingo_fp_angel@gmx.de>",
+    "license": "MIT",
+    "dependencies": {
+        "eslint": "^7.20.0",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-prettier": "^3.3.1",
+        "prettier": "^2.2.1"
+    }
+}
