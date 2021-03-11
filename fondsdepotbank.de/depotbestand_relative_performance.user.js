@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     relative Fondsperformance Fondsdepotbank
-// @version  2
+// @version  3
 // @grant    none
 // @match    https://finanzportal.fondsdepotbank.de/fdb-*/abaxx-?$part=Home.content.Welcome.Dashboard.4&$event=gotoLink
 // ==/UserScript==
@@ -14,9 +14,9 @@ const createListElementForPercentage = percentage => {
     return li;
 };
 
-const [saldoNode, gewinnNode] = document.querySelectorAll('.abx-portlet-bnk-portfolioselection-detail div.abx-right > ol > li:first-child');
-
 const addRelativePerformance = () => {
+    const [saldoNode, gewinnNode] = document.querySelectorAll('.abx-portlet-bnk-portfolioselection-detail div.abx-right > ol > li:first-child');
+
     if (saldoNode && gewinnNode) {
         const saldo = getAmount(saldoNode);
         const gewinn = getAmount(gewinnNode);
