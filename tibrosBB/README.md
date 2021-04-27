@@ -4,7 +4,7 @@
 
 Changes to the list of projects
 
-* add a regular HTML link that opens in target "_blank" to each project in the search result list
+- add a regular HTML link that opens in target "\_blank" to each project in the search result list
 
 Per default, the "Details" buttons used to open the project details are form submit buttons which cannot be opened in
 the background. When returning from the details page to the search result list in the same tab, the search results are

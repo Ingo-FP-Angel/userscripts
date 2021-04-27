@@ -8,10 +8,11 @@ const getAmount = node => parseFloat(node.innerText.replace('.', '').replace(/,(
 
 const createListElementForPercentage = (elementType, percentage) => {
     const newElement = document.createElement(elementType);
-    newElement.innerHTML = percentage.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    }) + ' %';
+    newElement.innerHTML =
+        percentage.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }) + ' %';
     newElement.style.color = percentage < 0 ? 'red' : 'green';
     newElement.classList.add('text-right', 'abx-primary');
 
