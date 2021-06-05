@@ -6,7 +6,7 @@
 // @include  https://perspective-daily.de/member/
 // ==/UserScript==
 
-const changeClass = (node) => {
+const changeClass = node => {
     node.className = node.className.replace('longread', 'shortread');
 };
 
@@ -17,9 +17,9 @@ const changeClassInitial = () => {
 };
 
 const addObserver = () => {
-    section = document.querySelector('.newest');
+    let section = document.querySelector('.newest');
 
-    var mutationObserver = new MutationObserver(mutations => {
+    let mutationObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(node => changeClass(node));
         });
@@ -29,7 +29,7 @@ const addObserver = () => {
 };
 
 document.onreadystatechange = () => {
-    console.log('Trigger for readyState ' + document.readyState);
+    console.log(`Trigger for readyState ${document.readyState}`);
     if (document.readyState === 'complete') {
         changeClassInitial();
         addObserver();
