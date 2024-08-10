@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Perspective Daily
-// @version  1
+// @version  2
 // @grant    none
 // @include  https://perspective-daily.de/article/feed/#/newest*
 // @include  https://perspective-daily.de/member/
@@ -20,9 +20,7 @@ const addObserver = () => {
     let section = document.querySelector('.newest');
 
     let mutationObserver = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-            mutation.addedNodes.forEach(node => changeClass(node));
-        });
+        changeClassInitial();
     });
 
     mutationObserver.observe(section, { childList: true });
