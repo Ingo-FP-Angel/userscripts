@@ -6,30 +6,32 @@
 // @include  https://perspective-daily.de/member/
 // ==/UserScript==
 
-const changeClass = node => {
-    node.className = node.className.replace('longread', 'shortread');
-};
+const changeClass = (node) => {
+    node.className = node.className.replace("longread", "shortread")
+}
 
 const changeClassInitial = () => {
-    const longreads = document.querySelectorAll('.longread');
+    const longreads = document.querySelectorAll(".longread")
 
-    longreads.forEach(node => changeClass(node));
-};
+    longreads.forEach(node => changeClass(node))
+    console.log("PD: changed all article styles")
+}
 
 const addObserver = () => {
-    let section = document.querySelector('.newest');
+    sections = document.querySelectorAll(".newest")
 
-    let mutationObserver = new MutationObserver(mutations => {
-        changeClassInitial();
-    });
-
-    mutationObserver.observe(section, { childList: true });
-};
+    sections.forEach(section => {
+        var mutationObserver = new MutationObserver(mutations => {
+            changeClassInitial()
+        })
+        mutationObserver.observe(section, {childList: true})
+    })
+}
 
 document.onreadystatechange = () => {
-    console.log(`Trigger for readyState ${document.readyState}`);
+    console.log("PD: Trigger for readyState " + document.readyState)
     if (document.readyState === 'complete') {
-        changeClassInitial();
-        addObserver();
+        changeClassInitial()
+        addObserver()
     }
-};
+}
