@@ -33,6 +33,7 @@ const addRelativePerformance = () => {
             const dd = createListElementForPercentage('dd', prozente);
             list.append(document.createElement('dt'));
             list.append(dd);
+            unsafeWindow.console.info('rFF: Added global relative performance.');
         } else {
             unsafeWindow.console.warn('rFF: Could not parse the page for the global performance list.');
         }
@@ -53,6 +54,7 @@ const addRelativePerformance = () => {
 
         const li = createListElementForPercentage('li', prozente);
         node.append(li);
+        unsafeWindow.console.info('rFF: Added relative performance for one position.');
     });
 };
 
